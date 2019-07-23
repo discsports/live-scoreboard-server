@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const path = './scores.json';
-const port = 8080;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyParser.json());
