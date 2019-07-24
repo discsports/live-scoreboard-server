@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const cors = require('cors');
 
 const path = './scores.json';
 const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   fs.readFile(path, (err, data) => {
